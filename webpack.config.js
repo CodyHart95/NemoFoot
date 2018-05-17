@@ -18,7 +18,11 @@ module.exports = env => {
     ],
     devServer:{
         historyApiFallback: true
-    }
+    },
+	
+	node:{
+		fs:'empty'
+	}
     };
    
 };

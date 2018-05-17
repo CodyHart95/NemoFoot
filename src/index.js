@@ -4,42 +4,69 @@ const div = document.createElement('div');
 document.body.appendChild(div);
 let page = 'Home';
 
+var http = require('http');
+var fs = require('fs');
+let read = fs.readFile('/src/Home.html', 'utf8', (err, data) => {
+    if(err) throw err;
+    return data;
+  });
+
 let loadHome = (div) => {
 history.pushState({},null,'Home');
 div.innerHTML = '';
+let home = fs.readFile('/src/Home.html', 'utf8', (err, data) => {
+    if(err) throw err;
+    return data;
+  });
+console.log(Home.data);
+div.appendChild(Home);
+// //card container
+// const container = document.createElement('div');
+// container.className = 'container';
 
-//card container
-const container = document.createElement('div');
-container.className = 'container';
+// //column row container
+// const row = document.createElement('div');
+// row.className = 'row';
 
-//column row container
-const row = document.createElement('div');
-row.className = 'row';
+// const column1 = document.createElement('div');
+// column1.className = 'col-sm-8';
 
-const column1 = document.createElement('div');
-column1.className = 'col-sm-8';
+// //create info header
+// const columnHeader = document.createElement('h2');
+// columnHeader.className = 'mt-4';
+// columnHeader.innerHTML = 'About the Clinic';
 
-//create info header
-const columnHeader = document.createElement('h2');
-columnHeader.className = 'mt-4';
-columnHeader.innerHTML = 'About the Clinic';
+// //create info paragraphs
+// const infoParagraph1 = document.createElement('p');
+// infoParagraph1.innerHTML = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. A deserunt neque tempore recusandae animi soluta quasi? Asperiores rem dolore eaque vel, porro, soluta unde debitis aliquam laboriosam. Repellat explicabo, maiores!';
+// const infoParagraph2 = document.createElement('p');
+// infoParagraph2.innerHTML = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. A deserunt neque tempore recusandae animi soluta quasi? Asperiores rem dolore eaque vel, porro, soluta unde debitis aliquam laboriosam. Repellat explicabo, maiores!';
 
-//create info paragraphs
-const infoParagraph1 = document.createElement('p');
-infoParagraph1.innerHTML = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. A deserunt neque tempore recusandae animi soluta quasi? Asperiores rem dolore eaque vel, porro, soluta unde debitis aliquam laboriosam. Repellat explicabo, maiores!';
-const infoParagraph2 = document.createElement('p');
-infoParagraph2.innerHTML = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. A deserunt neque tempore recusandae animi soluta quasi? Asperiores rem dolore eaque vel, porro, soluta unde debitis aliquam laboriosam. Repellat explicabo, maiores!';
+// columnHeader.appendChild(infoParagraph1);
+// columnHeader.appendChild(infoParagraph2);
 
-columnHeader.appendChild(infoParagraph1);
-columnHeader.appendChild(infoParagraph2);
+// //create container for contact info
+// const addressContainer = document.createElement('div');
+// addressContainer.className = 'col-sm-4';
 
-//create container for contact info
-const addressContainer = document.createElement('div');
-addressContainer.className = 'col-sm-4';
+// //create header for contact info
+// const contactHeader = document.createElement('h2');
+// contactHeader.innerHTML = 'Contact Us';
 
-//create header for contact info
-const contactHeader = document.createElement('h2');
-contactHeader.innerHTML = 'Contact Us';
+// const address = document.createElement('address');
+// const strong = document.createElement('strong');
+// strong.innerHTML = 'Nemo Foot Clinic';
+// const streetAddress = '3482 Melrose Place';
+// const cityState = 'Beverly Hills, CA 90210';
+// const br = document.createElement('br');
+
+// address.appendChild(strong);
+// address.appendChild(br);
+// address.appendChild(streetAddress);
+// address.appendChild(br);
+// address.appendChild()
+// address.appendChild(strong);
+
 };
 
 let loadServices = (div) =>{   
